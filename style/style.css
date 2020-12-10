@@ -1,0 +1,240 @@
+:root {
+  --vermelho: #e50914;
+  --preto: #141414;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--preto);
+  font-family: 'Arial', Times, serif;
+  color: white;
+}
+
+header .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .menu-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .menu-right {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+header .menu {
+  margin-left: 15px;
+  border: 1px solid white;
+}
+
+header .logo {
+  margin-left: 20px;
+  margin-right: 40px;
+  color: var(--vermelho);
+  font-family: 'Arial Black', Times;
+  font-size: 40px;
+}
+
+header .logo-barra {
+  margin: 10px 20px 0 30px;
+  color: var(--vermelho);
+  font-family: 'Arial Black', Times;
+  font-size: 40px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #aaa;
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+header nav a:hover {
+  color: #fff;
+  font-weight: bold;
+}
+
+.menu {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 5px;
+}
+
+.filme-principal {
+  font-size: 16px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%),
+    url('/img/capa-house.jpg');
+
+  height: 500px;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.filme-principal .descricao {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.titulo {
+  margin-top: 15%;
+  margin-bottom: 3%;
+  font-size: 40px;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.botao-play,
+.botao-info {
+  background-color: rgba(161, 159, 159, 0.349);
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+
+  padding: 15px 30px;
+  margin-right: 15px;
+  font-size: 15px;
+
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
+
+.botao-play {
+  background-color: white;
+  color: black;
+}
+
+.botao-info:hover {
+  background-color: rgba(255, 255, 255, 0.048);
+}
+
+.botao-play:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.botao-info i,
+.botao-play i {
+  margin-right: 10px;
+}
+
+.container {
+  margin-left: 30px;
+}
+
+.filme-principal .container {
+  width: 70%;
+}
+
+.box-filme {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.carrosel-filmes {
+  margin-left: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: rgb(192, 189, 189);
+}
+
+.owl-carousel {
+  margin-top: 10px;
+}
+
+.descricao {
+  line-height: 1.3em;
+}
+
+.barra {
+  background-color: #505050;
+
+  padding: 1em;
+  margin: 0%;
+  opacity: 0.98;
+
+  height: 100%;
+  width: 80%;
+  max-width: 280px;
+
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: -300px;
+
+  transition: all 0.6s ease-in;
+}
+
+.barra ul {
+  margin: 15px 8px;
+  list-style-type: none;
+}
+
+.barra ul li {
+  margin: 15px 8px;
+  padding: 20px;
+  border-bottom: 1px solid #7a7a7a;
+}
+
+.barra ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.barra a:hover {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 830px) {
+  header .container .menu-left,
+  .menu-right {
+    display: none;
+  }
+
+  #check {
+    display: none;
+  }
+
+  #icone {
+    cursor: pointer;
+    position: absolute;
+    z-index: 3;
+    margin: 15px;
+  }
+
+  #check:checked ~ .barra {
+    transform: translateX(300px);
+    transition: left 0.5s ease-out;
+  }
+}
+
+@media not all and (max-width: 830px) {
+  .barra {
+    display: none;
+  }
+  #check {
+    display: none;
+  }
+  #icone {
+    display: none;
+  }
+}
